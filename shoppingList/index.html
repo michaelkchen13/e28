@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js' defer></script>
+    <script src="script.js" defer></script>
+
+    <style>
+        [v-cloak] {
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Shopping List</h1>
+
+    <div id="app" v-cloak>
+        <label for="qty">Qty:
+            <input type="number" name="qty" id="qty" v-model='qty'>
+        </label>
+        <label for="item">Item:
+            <input type="text" name="item" id="item" v-model='item' v-on:keyup.enter='addItem'>
+        </label>
+        <button v-on:click='addItem'>Add</button>
+
+        <div v-if='itemList.length == 0'>
+            <i>you have no items in your shopping list</i>
+        </div>
+
+        <div v-else=''>
+            <p>Item count: {{ itemList.length }}</p>
+            <ul>
+                <li v-for='thisItem in itemList'>{{ thisItem.Quantity }} x {{ thisItem.Item }}</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+</html>
