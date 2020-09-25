@@ -18,7 +18,55 @@
 
     <main>
         <div id="app" v-cloak>
-            {{ name }}
+            <p>Choose rock, paper, or scissors and challenge the computer!</p>
+
+            <div id="userInput">
+                <label for="rock">rock
+                    <input type="radio" name="action" id="rock" v-on:click='playerMove = "rock"; winner = ""'>
+                </label>
+                <label for="paper">paper
+                    <input type="radio" name="action" id="paper" v-on:click='playerMove = "paper"; winner = ""'>
+                </label>
+                <label for="scissors">scissors
+                    <input type="radio" name="action" id="scissors" v-on:click='playerMove = "scissors"; winner = ""'>
+                </label>
+
+                <button id="shoot" v-on:click='playGame'>Shoot!</button>
+            </div>
+
+            <h2>Round {{ roundNum }}</h2>
+
+            <div v-if='winner == "Player"'>
+                <p>Player: {{ playerMove }} VS Computer: {{ compMove }}</p>
+                <h4>You win!!!</h4>
+            </div>
+            <div v-else-if='winner == "Computer"'>
+                <p>Player: {{ playerMove }} VS Computer: {{ compMove }}</p>
+                <h4>You Lose :'(</h4>
+            </div>
+            <div v-else-if='winner == "Noone"'>
+                <p>Player: {{ playerMove }} VS Computer: {{ compMove }}</p>
+                <h4>It's a Tie!</h4>
+            </div>
+
+            <div id="scoreBoard">
+                <h3>Score</h3>
+                <ul>
+                    <li>Player: {{ playerWin }}</li>
+                    <li>Computer: {{ compWin }}</li>
+                </ul>
+
+                <h3>History</h3>
+                <div v-if='winList.length == 0'>
+                    <p>No history</p>
+                </div>
+                <div v-else=''>
+                    <ul>
+                        <li v-for='thisRound in winList'>{{ thisRound.winner }} won round {{ thisRound.round }}</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </main>
 
