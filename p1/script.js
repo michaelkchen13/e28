@@ -13,9 +13,11 @@ let app = new Vue({
         playGame() {
             moves = ["rock", "paper", "scissors"];
 
+            // calculate computers move
             computersMoveNum = Math.floor(Math.random() * 3);
             this.compMove = moves[computersMoveNum];
 
+            // object for winList array
             obj = {};
 
             // Player Chooses Rock
@@ -61,10 +63,12 @@ let app = new Vue({
                 }
             }
 
+            // add info to winList array
             obj["round"] = this.roundNum;
             obj["winner"] = this.winner;
             this.winList.push(obj);
 
+            // change to next round
             this.roundNum++;
         }
     }

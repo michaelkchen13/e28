@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Scramble</title>
+
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js' defer></script>
+    <script src="script.js" defer></script>
+
+    <style>
+        [v-cloak] {
+            display: none
+        }
+
+        .win {
+            background-color: green !important;
+        }
+
+        .results {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Word Scramble</h1>
+
+    <div id="app" v-cloak>
+
+        <div v-if='gameOn == false'>
+            <label for="name">Enter your player name:
+                <input type="" name="name" v-model='playerName' v-on:keyup.enter='randomWord'>
+            </label>
+
+            <button v-on:click='randomWord'>Let's Play!!!</button>
+        </div>
+        <div v-else>
+            <p>Game on, {{ playerName }}!!!</p>
+            <p>{{ scrambleWord }}</p>
+            <p><i>Hint: {{ hint }}</i></p>
+
+            <label for="guess">Your guess:
+                <input type="" name="guess" v-model='guess' v-on:keyup.enter='submitGuess'>
+            </label>
+            <button v-on:click='submitGuess'>Submit guess</button>
+        </div>
+
+        <div class="results" v-if='gamePlayed' v-bind:class="{ win : playerWin }">
+            <div v-if='playerWin == true'>
+                <p>You got it! Nice work!!! <button v-on:click='playAgain'>Play again</button></p>
+            </div>
+            <div v-else-if='playerWin == false'>
+                <p>Not correct. Please try again.</p>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>

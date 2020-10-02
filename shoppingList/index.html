@@ -21,7 +21,7 @@
 
     <div id="app" v-cloak>
         <label for="qty">Qty:
-            <input type="number" name="qty" id="qty" v-model='qty'>
+            <input type="number" name="qty" id="qty" v-model.number='qty'>
         </label>
         <label for="item">Item:
             <input type="text" name="item" id="item" v-model='item' v-on:keyup.enter='addItem'>
