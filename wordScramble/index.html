@@ -27,6 +27,20 @@
 </head>
 
 <body>
+
+    <!-- TEMPLATE FOR OUR COMPONENT -->
+    <script type='text/x-template' id='guess-results'>
+        <div class="results" v-if='gameplayed' v-bind:class="{ win : playerwin }">
+            <div v-if='playerwin == true'>
+                <p>You got it! Nice work!!! <button v-on:click='$emit("play-again")'>Play again</button></p>
+            </div>
+            <div v-else-if='playerwin == false'>
+                <p>Not correct. Please try again.</p>
+            </div>
+        </div>
+    </script>
+
+
     <h1>Word Scramble</h1>
 
     <div id="app" v-cloak>
@@ -48,6 +62,9 @@
             </label>
             <button v-on:click='submitGuess'>Submit guess</button>
         </div>
+
+        <guess-results v-bind:gamePlayed='gamePlayed' v-bind:playerWin='playerWin' v-on:play-again='playAgain()'>
+        </guess-results>
 
         <div class="results" v-if='gamePlayed' v-bind:class="{ win : playerWin }">
             <div v-if='playerWin == true'>

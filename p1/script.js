@@ -1,16 +1,20 @@
 let app = new Vue({
     el: '#app',
     data: {
+        gameOn: false,
         playerMove: "",
         compMove: "",
         playerWin: 0,
         compWin: 0,
         roundNum: 1,
         winList: [],
-        winner: ""
+        winner: "",
+        handImagePlayer: "",
+        handImageComp: "",
     },
     methods: {
         playGame() {
+            this.gameOn = true;
             moves = ["rock", "paper", "scissors"];
 
             // calculate computers move
@@ -70,6 +74,19 @@ let app = new Vue({
 
             // change to next round
             this.roundNum++;
+        }
+    },
+    computed: {
+        playerMovesImage() {
+            if (this.playerMove == "rock") {
+                return "images/fist.png";
+            } else if (this.playerMove == "paper") {
+                return "images/paper.png";
+            } else if (this.playerMove == "scissors") {
+                return "images/scissors.png";
+            } else {
+                return null;
+            }
         }
     }
 })

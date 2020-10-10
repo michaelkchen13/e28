@@ -1,3 +1,22 @@
+Vue.component('guess-results', {
+  data: function () {
+    return {
+
+    }
+  },
+  props: {
+    gameplayed: Boolean,
+    playerwin: Boolean,
+    playagain: Function,
+  },
+  template: `#guess-results`,
+  methods: {
+
+  }
+})
+
+
+
 let app = new Vue({
   el: "#app",
   data: {

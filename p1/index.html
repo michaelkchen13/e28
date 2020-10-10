@@ -22,19 +22,28 @@
 
             <div id="userInput">
                 <label for="rock">rock
-                    <input type="radio" name="action" id="rock" v-on:click='playerMove = "rock"; winner = ""'>
+                    <input type="radio" name="action" id="rock" value="rock" v-model='playerMove'
+                        v-on:click='winner = ""; gameOn=false'>
                 </label>
                 <label for="paper">paper
-                    <input type="radio" name="action" id="paper" v-on:click='playerMove = "paper"; winner = ""'>
+                    <input type="radio" name="action" id="paper" value="paper" v-model='playerMove'
+                        v-on:click='winner = ""; gameOn=false'>
                 </label>
                 <label for="scissors">scissors
-                    <input type="radio" name="action" id="scissors" v-on:click='playerMove = "scissors"; winner = ""'>
+                    <input type="radio" name="action" id="scissors" value="scissors" v-model='playerMove'
+                        v-on:click='winner = ""; gameOn=false'>
                 </label>
 
                 <button id="shoot" v-on:click='playGame'>Shoot!</button>
             </div>
 
             <h2>Round {{ roundNum }}</h2>
+
+            <div v-if='gameOn'>
+                <img class="handImg" v-bind:src="playerMovesImage" alt="playerMove">
+                vs
+                <img v-bind:src="handImageComp" alt="compMove">
+            </div>
 
             <div v-if='winner == "Player"'>
                 <p>Player: {{ playerMove }} VS Computer: {{ compMove }}</p>
