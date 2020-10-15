@@ -1,3 +1,27 @@
+Vue.component('game-results', {
+    data: function () {
+      return {
+  
+      }
+    },
+    props: {
+      winner: String,
+      playerwin: Number,
+      compwin: Number,
+      winlist: Array,
+      resetScore: Function,
+    },
+    template: `#game-results`,
+    methods: {
+  
+    }
+  })
+
+
+
+
+
+
 let app = new Vue({
     el: '#app',
     data: {
@@ -6,11 +30,9 @@ let app = new Vue({
         compMove: "",
         playerWin: 0,
         compWin: 0,
-        roundNum: 1,
+        roundNum: "",
         winList: [],
         winner: "",
-        handImagePlayer: "",
-        handImageComp: "",
     },
     methods: {
         playGame() {
@@ -68,12 +90,20 @@ let app = new Vue({
             }
 
             // add info to winList array
-            obj["round"] = this.roundNum;
+            obj["round"] = this.roundNum + 1;
             obj["winner"] = this.winner;
             this.winList.push(obj);
 
             // change to next round
             this.roundNum++;
+        },
+        resetScore() {
+            this.playerWin = 0;
+            this.compWin = 0;
+            this.winList = [];
+            this.winner = "";
+            this.roundNum = "";
+            this.gameOn = false;
         }
     },
     computed: {
@@ -87,6 +117,17 @@ let app = new Vue({
             } else {
                 return null;
             }
-        }
+        },
+        compMovesImage() {
+            if (this.compMove == "rock") {
+                return "images/fist.png";
+            } else if (this.compMove == "paper") {
+                return "images/paper.png";
+            } else if (this.compMove == "scissors") {
+                return "images/scissors.png";
+            } else {
+                return null;
+            }
+        },
     }
 })
