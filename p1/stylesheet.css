@@ -2,6 +2,81 @@
     display: none
 }
 
+body {
+    text-align: center;
+    background-color: #171717;
+    color: #FF7619;
+}
+
+button {
+    color: white;
+    background-color: #FF7619;
+    padding: 10px;
+    border-radius: 35px;
+    border-color: white;
+}
+
+button:focus {
+    outline:0;
+}
+
+label {
+    margin: 15px;
+    font-size: 1.5rem;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+main {
+    margin-bottom: 10%;
+}
+
+#moveImages {
+    display: inline-flex;
+    border-style: double;
+    border-radius: 35px;
+    border-width: 3px;
+    width: 28%;
+}
+
+.threeBox{
+    width: 33.333333%;
+    margin-top: 15px;
+}
+
+#vs {
+    margin: 15%;
+}
+
 .handImg {
     width: 100px;
+}
+
+.flipped {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.divButton {
+    padding: 10px;
+}
+
+#scoreBoard {
+    border-style: double;
+    border-radius: 35px;
+    border-width: 3px;
+    display: inline-flex;
+}
+
+.box {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.resultText {
+    color: white !important;
 }

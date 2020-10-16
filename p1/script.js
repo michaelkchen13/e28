@@ -16,11 +16,7 @@ Vue.component('game-results', {
   
     }
   })
-
-
-
-
-
+  
 
 let app = new Vue({
     el: '#app',
@@ -109,7 +105,7 @@ let app = new Vue({
     computed: {
         playerMovesImage() {
             if (this.playerMove == "rock") {
-                return "images/fist.png";
+                return "images/rock.png";
             } else if (this.playerMove == "paper") {
                 return "images/paper.png";
             } else if (this.playerMove == "scissors") {
@@ -120,7 +116,7 @@ let app = new Vue({
         },
         compMovesImage() {
             if (this.compMove == "rock") {
-                return "images/fist.png";
+                return "images/rock.png";
             } else if (this.compMove == "paper") {
                 return "images/paper.png";
             } else if (this.compMove == "scissors") {

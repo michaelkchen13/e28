@@ -13,6 +13,7 @@
 
 <body>
     <header>
+        <img src="images/pumpkin.png" alt="">
         <h1>Rock, Paper, Scissors</h1>
     </header>
 
@@ -33,29 +34,35 @@
                     <input type="radio" name="action" id="scissors" value="scissors" v-model='playerMove'
                         v-on:click='winner = ""; gameOn=false'>
                 </label>
-
-                <button id="shoot" v-on:click='playGame'>Shoot!</button>
+                <div class="divButton">
+                    <button id="shoot" v-on:click='playGame'>Shoot!</button>
+                </div>
             </div>
 
             <div v-if='gameOn'>
                 <h2>Round {{ roundNum }}</h2>
-
-                <img class="handImg" v-bind:src="playerMovesImage" alt="playerMove">
-                vs
-                <img class="handImg" v-bind:src="compMovesImage" alt="compMove">
+                <div id="moveImages">
+                    <div class="threeBox">
+                        <img class="handImg" v-bind:src="playerMovesImage" alt="playerMove">
+                    </div>
+                    <div id="vs" class="threeBox">VS</div>
+                    <div class="threeBox">
+                        <img class="handImg flipped" v-bind:src="compMovesImage" alt="compMove">
+                    </div>
+                </div>
             </div>
 
             <div v-if='winner == "Player"'>
                 <p>Player: {{ playerMove }} VS Computer: {{ compMove }}</p>
-                <h4>You win!!!</h4>
+                <h2 class="resultText">You win!!!</h2>
             </div>
             <div v-else-if='winner == "Computer"'>
                 <p>Player: {{ playerMove }} VS Computer: {{ compMove }}</p>
-                <h4>You Lose :'(</h4>
+                <h2 class="resultText">You Lose :'(</h2>
             </div>
             <div v-else-if='winner == "Noone"'>
                 <p>Player: {{ playerMove }} VS Computer: {{ compMove }}</p>
-                <h4>It's a Tie!</h4>
+                <h2 class="resultText">It's a Tie!</h2>
             </div>
 
             <game-results v-bind:playerWin='playerWin' v-bind:compWin='compWin' v-bind:winner='winner'
@@ -66,26 +73,38 @@
     </main>
 
     <script type='text/x-template' id='game-results'>
-        <div id="scoreBoard">
-            <h3>Score</h3>
-            <ul>
-                <li>Player: {{ playerwin }}</li>
-                <li>Computer: {{ compwin }}</li>
-            </ul>
-
-            <h3>History</h3>
-            <div v-if='winlist.length == 0'>
-                <p>No history</p>
+        <div>
+            <div class="divButton">
+                <button v-on:click='$emit("reset-score")'>Reset Score</button>
             </div>
-            <div v-else=''>
-                <ul>
-                    <li v-for='thisRound in winlist'>{{ thisRound.winner }} won round {{ thisRound.round }}</li>
-                </ul>
+            <div id="scoreBoard">
+                <div id="score" class="box">
+                    <h3>Score</h3>
+                    <ul>
+                        <li>Player: {{ playerwin }}</li>
+                        <li>Computer: {{ compwin }}</li>
+                    </ul>
+                </div>
+                <div id="history" class="box">
+                    <h3>History</h3>
+                    <div v-if='winlist.length == 0'>
+                        <p>No history</p>
+                    </div>
+                    <div v-else=''>
+                        <ul>
+                            <li v-for='thisRound in winlist'>{{ thisRound.winner }} won round {{ thisRound.round }}</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <button v-on:click='$emit("reset-score")'>Reset Score</button>
         </div>
     </script>
 
+
+    <footer>
+        Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+            href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+    </footer>
 </body>
 
 </html>
