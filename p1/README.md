@@ -24,4 +24,4 @@ Font
 
 ## Notes for instructor
 
-_any notes for me to refer to while grading; if none, omit this section_
+No notes for instructor
