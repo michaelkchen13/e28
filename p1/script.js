@@ -1,8 +1,6 @@
 Vue.component('game-results', {
     data: function () {
-      return {
-  
-      }
+      return {}
     },
     props: {
       winner: String,
@@ -12,11 +10,8 @@ Vue.component('game-results', {
       resetScore: Function,
     },
     template: `#game-results`,
-    methods: {
-  
-    }
   })
-  
+
 
 let app = new Vue({
     el: '#app',
@@ -29,6 +24,8 @@ let app = new Vue({
         roundNum: "",
         winList: [],
         winner: "",
+        winnerTF: false,
+        loseTF: false,
     },
     methods: {
         playGame() {
@@ -42,6 +39,10 @@ let app = new Vue({
             // object for winList array
             obj = {};
 
+            // reset win/lose to false, affects the win/lose color
+            this.loseTF = false;
+            this.winnerTF = false;
+
             // Player Chooses Rock
             if (this.playerMove == "rock") {
                 if (this.compMove == "rock") {
@@ -49,10 +50,12 @@ let app = new Vue({
                 }
                 if (this.compMove == "paper") {
                     this.winner = "Computer";
+                    this.loseTF = true;
                     this.compWin++;
                 }
                 if (this.compMove == "scissors") {
                     this.winner = "Player";
+                    this.winnerTF = true;
                     this.playerWin++;
                 }
             }
@@ -60,6 +63,7 @@ let app = new Vue({
             if (this.playerMove == "paper") {
                 if (this.compMove == "rock") {
                     this.winner = "Player";
+                    this.winnerTF = true;
                     this.playerWin++;
                 }
                 if (this.compMove == "paper") {
@@ -67,6 +71,7 @@ let app = new Vue({
                 }
                 if (this.compMove == "scissors") {
                     this.winner = "Computer";
+                    this.loseTF = true;
                     this.compWin++;
                 }
             }
@@ -74,10 +79,12 @@ let app = new Vue({
             if (this.playerMove == "scissors") {
                 if (this.compMove == "rock") {
                     this.winner = "Computer";
+                    this.loseTF = true;
                     this.compWin++;
                 }
                 if (this.compMove == "paper") {
                     this.winner = "Player";
+                    this.winnerTF = true;
                     this.playerWin++;
                 }
                 if (this.compMove == "scissors") {
@@ -104,6 +111,7 @@ let app = new Vue({
     },
     computed: {
         playerMovesImage() {
+            // changes players chosen move image
             if (this.playerMove == "rock") {
                 return "images/rock.png";
             } else if (this.playerMove == "paper") {
@@ -115,6 +123,7 @@ let app = new Vue({
             }
         },
         compMovesImage() {
+            // changes computers chosen move image
             if (this.compMove == "rock") {
                 return "images/rock.png";
             } else if (this.compMove == "paper") {

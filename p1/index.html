@@ -7,6 +7,7 @@
     <title>Project 1</title>
 
     <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Griffy&display=swap" rel="stylesheet">
     <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js' defer></script>
     <script src="script.js" defer></script>
 </head>
@@ -41,7 +42,7 @@
 
             <div v-if='gameOn'>
                 <h2>Round {{ roundNum }}</h2>
-                <div id="moveImages">
+                <div id="moveImages" v-bind:class="{ winColor: winnerTF, loseColor: loseTF }">
                     <div class="threeBox">
                         <img class="handImg" v-bind:src="playerMovesImage" alt="playerMove">
                     </div>
@@ -72,6 +73,12 @@
         </div>
     </main>
 
+    <footer>
+        Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+            href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+    </footer>
+
+    <!-- Component to show record of game results -->
     <script type='text/x-template' id='game-results'>
         <div>
             <div class="divButton">
@@ -99,12 +106,6 @@
             </div>
         </div>
     </script>
-
-
-    <footer>
-        Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
-            href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-    </footer>
 </body>
 
 </html>
