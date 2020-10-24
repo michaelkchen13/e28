@@ -1,24 +1,28 @@
-Vue.component('guess-results', {
-  data: function () {
-    return {
+// Vue.component('guess-results', {
+//   data: function () {
+//     return {
 
-    }
-  },
-  props: {
-    gameplayed: Boolean,
-    playerwin: Boolean,
-    playagain: Function,
-  },
-  template: `#guess-results`,
-  methods: {
+//     }
+//   },
+//   props: {
+//     gameplayed: Boolean,
+//     playerwin: Boolean,
+//     playagain: Function,
+//   },
+//   template: `#guess-results`,
+//   methods: {
 
-  }
-})
+//   }
+// })
 
-
+import Vue from 'vue';
+import ResultSection from './components/ResultSection.vue'
 
 let app = new Vue({
   el: "#app",
+  components: {
+    'results-section' : ResultSection
+  },
   data: {
     playerName: "",
     playerWin: "",

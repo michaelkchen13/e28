@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word Scramble</title>
 
-    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js' defer></script>
-    <script src="script.js" defer></script>
+    <!-- <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js' defer></script> -->
+    <!-- <script src="script.js" defer></script> -->
+
+    <script src='/js/master.js' defer></script>
+
 
     <style>
         [v-cloak] {
@@ -29,7 +32,7 @@
 <body>
 
     <!-- TEMPLATE FOR OUR COMPONENT -->
-    <script type='text/x-template' id='guess-results'>
+    <!-- <script type='text/x-template' id='guess-results'>
         <div class="results" v-if='gameplayed' v-bind:class="{ win : playerwin }">
             <div v-if='playerwin == true'>
                 <p>You got it! Nice work!!! <button v-on:click='$emit("play-again")'>Play again</button></p>
@@ -38,7 +41,7 @@
                 <p>Not correct. Please try again.</p>
             </div>
         </div>
-    </script>
+    </script> -->
 
 
     <h1>Word Scramble</h1>
