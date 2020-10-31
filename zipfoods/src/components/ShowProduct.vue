@@ -1,13 +1,17 @@
 <!-- src/components/ShowProduct.vue -->
 <template>
     <div class="product">
-        <div class="product-name">{{ product.name }}</div>
+        <router-link v-bind:to="paths[links] + product.id">
+            <div class="product-name">{{ product.name }}</div>
+        </router-link>
+
+        <router-view></router-view>
+
         <img
             class="product-thumb"
             :src="require('@/assets/images/products/' + product.id + '.jpg')"
         />
-        <p class="product-description">{{ product.description }}</p>
-        <div class="product-price">${{ product.price }}</div>
+
     </div>
 </template>
 
@@ -16,7 +20,13 @@ export default {
     name: 'show-product',
     props: ['product'],
     data: function() {
-        return {};
+        return {
+            links: 'productPage',
+
+            paths: {
+                productPage: '/products/'
+            },
+        };
     }
 };
 </script>
