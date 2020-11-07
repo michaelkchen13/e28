@@ -12,12 +12,11 @@
 
 <script>
 import { products } from '@/products.js';
-
 export default {
     name: 'show-featured',
     props: ['category'],
-    data: function() {
-        return{
+    data: function () {
+        return {
             products: products,
         };
     },
@@ -27,9 +26,6 @@ export default {
                 return product.categories.includes(this.category);
             }, this.category);
         },
-    }
+    },
 };
 </script>
-
-<style scoped>
-</style>
