@@ -2,22 +2,26 @@
     <div>
         <h2>Add a Product</h2>
 
+        <div v-if="showConfirmationMessage">
+            <h3 style="color:green;">Product Added!</h3>
+        </div>
+
         <div id="inputs">
-            <label for="name">Name</label>
+            <label for="name">Name<span style="color:red;">*</span>: </label>
             <input type="text" v-model="product.name" id="name" />
-
-            <label for="sku">SKU:</label>
+            <br>
+            <label for="sku">SKU<span style="color:red;">* Miniumum 3characters</span>: </label>
             <input type="text" v-model="product.sku" id="sku" />
-
-            <label for="price">Price:</label>
+            <br>
+            <label for="price">Price<span style="color:red;">*</span>: </label>
             <input type="text" v-model="product.price" id="price" />
-
-            <label for="available">Quantity available:</label>
+            <br>
+            <label for="available">Quantity available<span style="color:red;">*</span>: </label>
             <input type="text" v-model="product.available" id="available" />
-
-            <label for="weight">Weight (in lbs):</label>
+            <br>
+            <label for="weight">Weight (in lbs)<span style="color:red;">*</span>: </label>
             <input type="text" v-model="product.weight" id="weight" />
-
+            <br>
             <label for="perishable" class="form-checkbox-label">
                 <input
                     type="checkbox"
@@ -26,14 +30,19 @@
                 />
                 Perishable?
             </label>
-
+            <br>
             <label for="description">Description</label>
             <textarea v-model="product.description" id="description"></textarea>
         </div>
 
         <button @click="addProduct">Add Product</button>
 
-        {{ errors }}
+        <ul style="list-style-type:none; color:red;">
+            <li v-for="error in errors" :key="error[0]">
+                {{ error[0] }}
+            </li>
+        </ul>
+        
     </div>
 </template>
 
@@ -61,9 +70,11 @@ export default {
             axios.post('/product', this.product).then((response) => {
                 if (response.data.errors) {
                     this.errors = response.data.errors;
+                    console.log(response.data);
                 } else {
                     this.$emit('update-products');
                     this.showConfirmationMessage = true;
+                    this.product = {}
                 }
             });
         },

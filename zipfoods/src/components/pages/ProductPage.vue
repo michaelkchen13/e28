@@ -1,32 +1,47 @@
 <template>
     <div id="product-page">
         <div v-if="product">
-            <show-product
-                :product="product"
-                :includeDetails="true"
-            ></show-product>
+            <div v-if="edit == false">
+                <show-product
+                    :product="product"
+                    :includeDetails="true"
+                ></show-product>
+            </div>
+        
+            <div v-if="productNotFound">
+                <p>Product {{ id }} not found.</p>
+
+                <router-link v-bind:to="'/products'"
+                    >Go to all products
+                </router-link>
+            </div>
         </div>
 
-        <div v-if="productNotFound">
-            <p>Product {{ id }} not found.</p>
-
-            <router-link v-bind:to="'/products'"
-                >Go to all products
-            </router-link>
+        <div>
+            <edit-product 
+                :edit=edit
+                @update-edit="update"
+                :product="product"
+            ></edit-product>
         </div>
     </div>
 </template>
 
 <script>
 import ShowProduct from '@/components/ShowProduct.vue';
+import EditProduct from '@/components/EditProduct.vue';
+
 export default {
     name: '',
     props: ['id', 'products'],
     components: {
         'show-product': ShowProduct,
+        'edit-product': EditProduct,
     },
     data() {
-        return {};
+        return {
+            edit: false,
+        };
     },
     computed: {
         product() {
@@ -38,5 +53,10 @@ export default {
             return this.product == null;
         },
     },
+    methods: {
+        update(edit){
+            this.edit = edit;
+        }
+    }
 };
 </script>
