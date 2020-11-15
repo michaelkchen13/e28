@@ -1,7 +1,7 @@
 <template>
     <div>
         <button v-on:click=editTF()>Edit Note</button>
-
+    
         <div v-if="edit">
             <label for="name">Title<span style="color:red;">*</span><input type="text" v-model="updateNote.title" /></label>
             <label for="subject">Subject<span style="color:red;">*</span> <input type="text" v-model="updateNote.subject" disabled></label>
@@ -34,7 +34,7 @@ export default {
         editTF() {
             // change edit status to T or F
             if (this.edit == true) {
-                this.edit= false;
+                this.edit = false;
             } else {
                 this.edit = true;
             }

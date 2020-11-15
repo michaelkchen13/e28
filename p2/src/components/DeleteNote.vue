@@ -1,7 +1,7 @@
 <template>
     <div>
         <button @click="deleteNote">Delete</button>
-
+    
         <ul style="list-style-type:none; color:red;">
             <li v-for="error in errors" :key="error[0]">
                 {{ error[0] }}
@@ -27,12 +27,12 @@ export default {
         deleteNote() {
             // update in api
             axios.delete('/notes/' + this.note.id, this.updateNote).then((response) => {
-              if (response.data.errors) {
-                  this.errors = response.data.errors;
-                  console.log(response.data);
-              } else {
-                  this.$emit('update-subjects');
-              }
+                if (response.data.errors) {
+                    this.errors = response.data.errors;
+                    console.log(response.data);
+                } else {
+                    this.$emit('update-subjects');
+                }
             });
         },
     }
