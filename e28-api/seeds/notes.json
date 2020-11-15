@@ -1,0 +1,28 @@
+{
+    "seeds": [
+        {
+            "title": "Video Games to play list",
+            "subject": "General Notes",
+            "description": "Ghost of Tsushima, TWD Saints & Sinners, Spiderman: Miles Morales",
+            "favorite": true
+        },
+        {
+            "title": "Music to Add",
+            "subject": "General Notes",
+            "description": "I see you everywhere - Eric Chou, Sad girl - Alaina Castillo",
+            "favorite": true
+        },
+        {
+            "title": "Props",
+            "subject": "Vue.js Class",
+            "description": "Props Notes for Vue.js",
+            "favorite": false
+        },
+        {
+            "title": "API",
+            "subject": "Vue.js Class",
+            "description": "Notes on API for Vue Class",
+            "favorite": false
+        }
+    ]
+}

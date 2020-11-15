@@ -1,0 +1,12 @@
+{
+    "seeds": [
+        {
+            "name": "General Notes",
+            "description": "General Notes about anything."
+        },
+        {
+            "name": "Vue.js Class",
+            "description": "Notes for Vue.js Class"
+        }
+    ]
+}
