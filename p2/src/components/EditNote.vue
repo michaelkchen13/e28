@@ -32,6 +32,7 @@ export default {
     },
     methods: {
         editTF() {
+            // change edit status to T or F
             if (this.edit == true) {
                 this.edit= false;
             } else {
@@ -39,6 +40,7 @@ export default {
             }
         },
         editNote() {
+            // push updates to api
             axios.put('/notes/' + this.updateNote.id, this.updateNote).then((response) => {
                 if (response.data.errors) {
                     this.errors = response.data.errors;

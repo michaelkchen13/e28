@@ -36,19 +36,21 @@ export default {
         };
     },
     methods: {
-      addSubject() {
-        this.subjectAdded = false;
-        axios.post('/subject', this.newSubject).then((response) => {
-            if (response.data.errors) {
-                this.errors = response.data.errors;
-                console.log(response.data);
-            } else {
-                this.$emit('update-subjects');
-                this.subjectAdded = true;
-                this.newSubject = {};
-                this.errors = null;
-            }
-        });
+        addSubject() {
+            this.subjectAdded = false;
+            
+            // push updates to api
+            axios.post('/subject', this.newSubject).then((response) => {
+                if (response.data.errors) {
+                    this.errors = response.data.errors;
+                    console.log(response.data);
+                } else {
+                    this.$emit('update-subjects');
+                    this.subjectAdded = true;
+                    this.newSubject = {};
+                    this.errors = null;
+                }
+            });
     },
     }
 }

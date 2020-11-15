@@ -1,31 +1,18 @@
-# p2
+# Project 2
 
-## Project setup
+- By: Michael Chen
+- Production URL: <http://e28p2.michaelkchen.me/>
 
-```
-npm install
-```
+## Outside resources
 
-### Compiles and hot-reloads for development
+Code Resources
 
-```
-npm run serve
-```
+- <https://www.telerik.com/blogs/how-to-emit-data-in-vue-beyond-the-vuejs-documentation>
 
-### Compiles and minifies for production
+Image Resources
 
-```
-npm run build
-```
+Font
 
-### Lints and fixes files
+## Notes for instructor
 
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-https://www.telerik.com/blogs/how-to-emit-data-in-vue-beyond-the-vuejs-documentation
+No notes for instructor

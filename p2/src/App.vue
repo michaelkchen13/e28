@@ -50,6 +50,7 @@ export default {
   },
   components: {},
   methods: {
+    // get latest notes and subjects from api
     updateSubjectsNotes() {
       axios.get('subject').then((response) => {
         this.subjects = response.data.subject;

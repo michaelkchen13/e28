@@ -30,12 +30,17 @@ export default {
     },
     methods: {
         toggleFavorite() {
+            // set updateNote to newest note in case it was edited
+            this.updateNote = Vue.util.extend({}, this.note);
+            
+            // check and change favorite status
             if (this.updateNote.favorite == 0) {
                 this.updateNote.favorite = 1;
             } else {
                 this.updateNote.favorite = 0;
             }
             
+            // update in API
             axios.put('/notes/' + this.note.id, this.updateNote).then((response) => {
               if (response.data.errors) {
                   this.errors = response.data.errors;

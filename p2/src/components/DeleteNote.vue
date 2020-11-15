@@ -25,6 +25,7 @@ export default {
     },
     methods: {
         deleteNote() {
+            // update in api
             axios.delete('/notes/' + this.note.id, this.updateNote).then((response) => {
               if (response.data.errors) {
                   this.errors = response.data.errors;
