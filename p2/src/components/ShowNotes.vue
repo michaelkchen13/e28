@@ -23,13 +23,12 @@
                                 <delete-note :note='note' v-on:update-subjects="updateSubjectsNotes()">
                                 </delete-note>
                             </div>
-    
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
-    
     </div>
 </template>
 

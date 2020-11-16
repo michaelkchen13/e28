@@ -21,7 +21,6 @@
                 <h5 style="color:green;">Note Added!</h5>
             </div>
         </div>
-    
     </div>
 </template>
 
@@ -37,6 +36,7 @@ export default {
                 title: '',
                 subject: '',
                 description: '',
+                favorite: '0'
             },
             noteAdded: "",
             errors: null,
@@ -44,6 +44,7 @@ export default {
         };
     },
     methods: {
+        // toggles the add note section
         addnoteToggle() {
             this.noteAdded = false;
             this.errors = null;
@@ -53,6 +54,7 @@ export default {
                 this.addnoteActive = false;
             }
         },
+        // adds note to server
         addNote() {
             this.newNote.subject = this.subject.name
             axios.post('/notes', this.newNote).then((response) => {

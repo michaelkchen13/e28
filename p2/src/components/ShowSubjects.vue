@@ -2,10 +2,10 @@
     <div>
         <div class="container" v-for="subject in subjects.slice().reverse()" :key="subject.id">
             <div class="subjects">
-                <router-link v-bind:to="'/' + subject.id" exact>
-                    <h4>{{ subject.name }}</h4>
+                <router-link class="subjectTitle" v-bind:to="'/' + subject.id" exact>
+                    {{ subject.name }}
                 </router-link>
-                <div>
+                <div class="subjectDescription">
                     {{ subject.description }}
                 </div>
             </div>

@@ -1,10 +1,7 @@
 <template>
     <div>
-        <p class="center-align">Which subject notes would you like to look at?</p>
-    
         <show-subjects v-bind:subjects="subjects" v-bind:notes="notes">
         </show-subjects>
-    
     </div>
 </template>
 

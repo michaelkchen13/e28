@@ -2,7 +2,7 @@
     <div>
         <h2 class="center-align">Favorite Notes</h2>
     
-        <div v-for="note in notes" :key="note.id">
+        <div v-for="note in notes.slice().reverse()" :key="note.id">
             <div v-if="note.favorite == 1">
                 <div class="container">
                     <div class="notes">
@@ -16,6 +16,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 </template>
 
