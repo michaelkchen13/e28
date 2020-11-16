@@ -43,4 +43,6 @@ Font/Styling
 
 ## Notes for instructor
 
-No notes for instructor. :D
+I couldn't figure out how to get a normal CSS file to work so I used a SCSS file.
+
+:D
