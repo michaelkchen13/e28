@@ -1,10 +1,10 @@
 <template>
     <div>
-        <div v-if="updateNote.favorite == 0">
-            <button @click="toggleFavorite">Add to favorites</button>
+        <div v-if="updateNote.favorite == 1">
+            <button @click="toggleFavorite">Remove from favorites</button>
         </div>
         <div v-else>
-            <button @click="toggleFavorite">Remove from favorites</button>
+            <button @click="toggleFavorite">Add to favorites</button>
         </div>
     
         <ul style="list-style-type:none; color:red;">
@@ -34,10 +34,10 @@ export default {
             this.updateNote = Vue.util.extend({}, this.note);
 
             // check and change favorite status
-            if (this.updateNote.favorite == 0) {
-                this.updateNote.favorite = 1;
-            } else {
+            if (this.updateNote.favorite == 1) {
                 this.updateNote.favorite = 0;
+            } else {
+                this.updateNote.favorite = 1;
             }
 
             // update in API
