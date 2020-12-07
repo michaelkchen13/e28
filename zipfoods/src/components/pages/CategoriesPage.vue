@@ -12,7 +12,6 @@
 <script>
 export default {
     name: '',
-    props: ['products'],
     data: function () {
         return {};
     },
@@ -25,6 +24,9 @@ export default {
             // Return unique, sorted categories
             return [...new Set(mergedCategories)].sort();
         },
+        products() {
+            return this.$store.state.products;
+        }
     },
 };
 </script>

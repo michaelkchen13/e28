@@ -11,13 +11,11 @@
 </template>
 
 <script>
-import { products } from '@/products.js';
 export default {
     name: 'show-featured',
     props: ['category'],
     data: function () {
         return {
-            products: products,
         };
     },
     computed: {
@@ -26,6 +24,9 @@ export default {
                 return product.categories.includes(this.category);
             }, this.category);
         },
+        products() {
+            return this.$store.state.products;
+        }
     },
 };
 </script>

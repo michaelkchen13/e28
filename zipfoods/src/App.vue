@@ -35,13 +35,14 @@ export default {
         return {
             products: [],
             /* Store links in an array to maintain order */
-            links: ['home', 'products', 'categories', 'add a product'],
+            links: ['home', 'products', 'categories', 'add a product', 'account',],
             /* Map links to the appropriate component */
             paths: {
                 home: '/',
                 products: '/products',
                 categories: '/categories',
                 'add a product': '/products/new',
+                account: '/account',
             },
         };
     },
@@ -54,6 +55,8 @@ export default {
     },
     mounted() {
         this.updateProducts();
+        this.$store.dispatch('fetchProducts');
+        this.$store.dispatch('authUser');
     },
 };
 </script>
