@@ -1,28 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router';
+import store from '@/common/store'
+import router from '@/common/router.js'
 
 Vue.config.productionTip = false
 
 Vue.use(VueRouter);
 
-import HomePage from '@/components/pages/HomePage.vue';
-import FavoritesPage from '@/components/pages/FavoritesPage.vue';
-import NewSubjectPage from '@/components/pages/NewSubjectPage.vue';
-import SubjectPage from '@/components/pages/SubjectPage.vue';
-
-
-const router = new VueRouter({
-  mode: 'history',
-  routes: [
-      { path: '/', component: HomePage },
-      { path: '/favorites', component: FavoritesPage },
-      { path: '/new', component: NewSubjectPage },
-      { path: '/:id', component: SubjectPage, props: true },
-  ],
-})
-
 new Vue({
+  store: store,
   router: router,
   render: h => h(App),
 }).$mount('#app')

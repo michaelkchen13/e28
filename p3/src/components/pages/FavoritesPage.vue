@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-cloak>
         <h2 class="center-align">Favorite Notes</h2>
     
         <div v-for="note in notes.slice().reverse()" :key="note.id">

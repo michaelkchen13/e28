@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-cloak>
         <h2 class="center-align">Add New Subject</h2>
     
         <label for="title">Name<span style="color:red;">*</span><input type="text" v-model="newSubject.name" id="title" /></label>
@@ -35,6 +35,15 @@ export default {
             errors: null,
         };
     },
+    watch: {
+        newSubject: {
+            handler() {
+                this.$store.commit('setNewSubName', this.newSubject.name);
+                this.$store.commit('setNewSubDesc', this.newSubject.description);
+            },
+            deep: true,
+        }
+    },
     methods: {
         addSubject() {
             this.subjectAdded = false;
@@ -52,6 +61,10 @@ export default {
                 }
             });
         },
+    },
+    mounted() {
+        this.newSubject.name = this.$store.state.newSubName;
+        this.newSubject.description = this.$store.state.newSubDesc;
     }
 }
 </script>

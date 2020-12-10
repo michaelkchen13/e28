@@ -1,14 +1,17 @@
 <template>
-    <div>
+    <div v-cloak>
         <div v-if="subject">
             <div class="center-align">
                 <h2> {{ subject.name }} </h2>
                 <h5>{{ subject.description }}</h5>
             </div>
         </div>
-    
-        <add-note v-bind:subject="subject" v-bind:notes="notes" v-on:update-subjects="updateSubjectsNotes()">
-        </add-note>
+
+        <div v-if="user">
+            <add-note v-bind:subject="subject" v-bind:notes="notes" v-on:update-subjects="updateSubjectsNotes()">
+            </add-note>
+        </div>
+        
     
         <show-notes v-bind:subject="subject" v-bind:notes="notes" v-on:update-subjects="updateSubjectsNotes()">
         </show-notes>
@@ -27,7 +30,9 @@ export default {
         'add-note': AddNote,
     },
     data: function() {
-        return {};
+        return {
+            user: null
+        };
     },
     computed: {
         subject() {
@@ -40,6 +45,9 @@ export default {
         updateSubjectsNotes() {
             this.$emit('update-subjects');
         },
+    },
+    mounted() {
+        this.user = this.$store.state.user;
     }
 }
 </script>

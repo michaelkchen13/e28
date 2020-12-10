@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-cloak>
         <show-subjects v-bind:subjects="subjects" v-bind:notes="notes">
         </show-subjects>
     </div>

@@ -28,13 +28,15 @@ export default {
         return {
             subjects: [],
             notes: [],
+
             // Links for main nav
-            links: ['Home', 'Favorites', 'Add a Subject'],
+            links: ['Home', 'Favorites', 'Add a Subject', 'Account'],
             // page paths
             paths: {
                 Home: '/',
                 Favorites: '/favorites',
-                'Add a Subject': '/new'
+                'Add a Subject': '/new',
+                'Account': '/account',
             },
         };
     },
@@ -52,6 +54,7 @@ export default {
     },
     mounted() {
         this.updateSubjectsNotes();
+        this.$store.dispatch('authUser');
     }
 }
 </script>
