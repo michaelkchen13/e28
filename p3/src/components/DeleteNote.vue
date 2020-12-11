@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="deleteNote">Delete</button>
+        <button data-test="delete-note" @click="deleteNote">Delete</button>
     
         <ul style="list-style-type:none; color:red;">
             <li v-for="error in errors" :key="error[0]">

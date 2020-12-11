@@ -1,10 +1,10 @@
 <template>
     <div>
         <div v-if="updateNote.favorite == 1">
-            <button @click="toggleFavorite">Remove from favorites</button>
+            <button data-test="remove-favorite" @click="toggleFavorite">Remove from favorites</button>
         </div>
         <div v-else>
-            <button @click="toggleFavorite">Add to favorites</button>
+            <button data-test="add-favorite" @click="toggleFavorite">Add to favorites</button>
         </div>
     
         <ul style="list-style-type:none; color:red;">

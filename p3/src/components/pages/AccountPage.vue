@@ -42,7 +42,7 @@
                         >Name:
                         <input
                             type="text"
-                            data-test="name-input"
+                            data-test="name-register-input"
                             v-model="data.name"
                     /></label>
                 </div>
@@ -51,7 +51,7 @@
                         >Email:
                         <input
                             type="text"
-                            data-test="email-input"
+                            data-test="email-register-input"
                             v-model="data.email"
                     /></label>
                 </div>
@@ -60,7 +60,7 @@
                         >Password:
                         <input
                             type="password"
-                            data-test="password-input"
+                            data-test="password-register-input"
                             v-model="data.password"
                     /></label>
                 </div>

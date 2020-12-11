@@ -1,12 +1,12 @@
 <template>
     <div>
-        <button v-on:click=editTF()>Edit Note</button>
+        <button data-test="edit-btn" v-on:click=editTF()>Edit Note</button>
     
         <div v-if="edit">
-            <label for="name">Title<span style="color:red;">*</span><input type="text" v-model="updateNote.title" /></label>
+            <label for="name">Title<span style="color:red;">*</span><input data-test="edit-title" type="text" v-model="updateNote.title" /></label>
             <label for="subject">Subject<span style="color:red;">*</span> <input type="text" v-model="updateNote.subject" disabled></label>
-            <label for="description">Description<span style="color:red;">*</span><textarea v-model="updateNote.description" id="description"></textarea></label>
-            <button id="editSaveBtn" v-on:click='editTF(); editNote();'>Save Changes</button>
+            <label for="description">Description<span style="color:red;">*</span><textarea data-test="edit-description" v-model="updateNote.description" id="description"></textarea></label>
+            <button id="editSaveBtn" data-test="edit-save-btn" v-on:click='editTF(); editNote();'>Save Changes</button>
         </div>
         <ul style="list-style-type:none; color:red;">
             <li v-for="error in errors" :key="error[0]">

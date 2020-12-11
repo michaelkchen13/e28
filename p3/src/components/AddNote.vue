@@ -1,14 +1,14 @@
 <template>
     <div>
         <div v-if="subject" class="container notes">
-            <h3 class="center-align" id="newNoteToggle" @click="addnoteToggle">Add New Note</h3>
+            <h3 class="center-align" data-test="note-toggle-btn" id="newNoteToggle" @click="addnoteToggle">Add New Note</h3>
     
             <div v-if="addnoteActive">
-                <label for="title">Title<span style="color:red;">*</span><input type="text" v-model="newNote.title" id="title" /></label>
+                <label for="title">Title<span style="color:red;">*</span><input data-test="title-input" type="text" v-model="newNote.title" id="title" /></label>
                 <label for="subject">Subject<span style="color:red;">*</span><input type="text" v-model="subject.name" id="subject" disabled></label>
-                <label for="description">Description<span style="color:red;">*</span><textarea type="textarea" v-model="newNote.description" id="description"></textarea></label>
+                <label for="description">Description<span style="color:red;">*</span><textarea data-test="description-input" type="textarea" v-model="newNote.description" id="description"></textarea></label>
                 <div class="center-align">
-                    <button @click="addNote">Add Note</button>
+                    <button data-test="add-note-btn" @click="addNote">Add Note</button>
                     <ul style="list-style-type:none; color:red;">
                         <li v-for="error in errors" :key="error[0]">
                             {{ error[0] }}

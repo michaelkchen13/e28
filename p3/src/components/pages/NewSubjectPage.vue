@@ -2,10 +2,10 @@
     <div v-cloak>
         <h2 class="center-align">Add New Subject</h2>
     
-        <label for="title">Name<span style="color:red;">*</span><input type="text" v-model="newSubject.name" id="title" /></label>
-        <label for="description">Description<span style="color:red;">*</span><textarea type="textarea" v-model="newSubject.description" id="description"></textarea></label>
+        <label for="title">Name<span style="color:red;">*</span><input type="text" data-test="subject-name-input" v-model="newSubject.name" id="title" /></label>
+        <label for="description">Description<span style="color:red;">*</span><textarea data-test="subject-description-input" type="textarea" v-model="newSubject.description" id="description"></textarea></label>
         <div class="center-align">
-            <button @click="addSubject">Add Note</button>
+            <button @click="addSubject" data-test="subject-add-btn">Add Note</button>
             <ul style="list-style-type:none; color:red;">
                 <li v-for="error in errors" :key="error[0]">
                     {{ error[0] }}

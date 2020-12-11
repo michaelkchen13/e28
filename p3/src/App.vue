@@ -7,7 +7,7 @@
             <nav>
                 <ul>
                     <li>
-                        <router-link v-for="link in links" v-bind:key="link" v-bind:to="paths[link]" exact>{{ link }}
+                        <router-link v-for="link in links" v-bind:key="link" v-bind:to="paths[link]" :data-test="link + '-link'" exact>{{ link }}
                         </router-link>
                     </li>
                 </ul>
@@ -54,7 +54,6 @@ export default {
     },
     mounted() {
         this.updateSubjectsNotes();
-        this.$store.dispatch('authUser');
     }
 }
 </script>
