@@ -4,14 +4,15 @@
             "type": "string",
             "validators": [
                 "required",
-                "min:1",
+                "min:3",
                 "max:100"
             ]
         },
         "description": {
             "type": "text",
             "validators": [
-                "required"
+                "required",
+                "min:3"
             ]
         }
     },

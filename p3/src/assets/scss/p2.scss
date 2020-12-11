@@ -27,6 +27,7 @@ button {
     font-family: 'Caveat', cursive;
     background-color: #D2D5D9;
     outline-color: #595959 !important;
+    margin: 1%;
 }
 
 #titleLogo {
@@ -88,6 +89,7 @@ textarea {
     outline:none !important;
     border-style: inset;
     border-width: 2px;
+    font-family: 'Caveat', cursive !important;
 }
 
 header {
@@ -159,4 +161,10 @@ nav a {
 #editSaveBtn {
     margin-bottom: 10px;
     margin-left: 27%;
+}
+
+.error {
+    list-style-type:none;
+    color:red;
+    text-align: center;
 }
