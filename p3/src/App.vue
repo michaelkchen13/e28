@@ -59,5 +59,5 @@ export default {
 </script>
 
 <style lang='scss'>
-@import '@/assets/scss/p2.scss';
+@import '@/assets/scss/p3.scss';
 </style>
