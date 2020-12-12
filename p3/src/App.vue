@@ -2,7 +2,7 @@
     <div id="app" v-cloak>
         <header>
             <router-link id="titleLogo" v-bind:to="'/'" exact>
-                Mike's Notes
+                Collaborative Notes
             </router-link>
             <nav>
                 <ul>

@@ -3,26 +3,22 @@
         {
             "title": "Video Games to play list",
             "subject": "General Notes",
-            "description": "Ghost of Tsushima, TWD Saints & Sinners, Spiderman: Miles Morales",
-            "favorite": true
+            "description": "Ghost of Tsushima, TWD Saints & Sinners, Spiderman: Miles Morales"
         },
         {
             "title": "Music to Add",
             "subject": "General Notes",
-            "description": "I see you everywhere - Eric Chou, Sad girl - Alaina Castillo",
-            "favorite": true
+            "description": "I see you everywhere - Eric Chou, Sad girl - Alaina Castillo"
         },
         {
             "title": "Props",
             "subject": "Vue.js Class",
-            "description": "Props Notes for Vue.js",
-            "favorite": false
+            "description": "Props Notes for Vue.js"
         },
         {
             "title": "API",
             "subject": "Vue.js Class",
-            "description": "Notes on API for Vue Class",
-            "favorite": false
+            "description": "Notes on API for Vue Class"
         }
     ]
 }
