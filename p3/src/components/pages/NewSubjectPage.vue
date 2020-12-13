@@ -2,14 +2,20 @@
     <div v-cloak>
         <h2 class="center-align">Add New Subject</h2>
     
-        <label for="title">Name<span style="color:red;">*</span><input type="text" placeholder="min:3 characters max:100 characters" data-test="subject-name-input" v-model="newSubject.name" id="title" v-on:blur="validate()" /></label>
+        <label for="title">Name
+            <span style="color:red;">*</span>
+            <input type="text" placeholder="min:3 characters max:100 characters" data-test="subject-name-input" v-model="newSubject.name" id="title" v-on:blur="validate()" />
+        </label>
         <error-field v-if="errors && 'name' in errors" :errors="errors.name" class="error"></error-field>
     
-        <label for="description">Description<span style="color:red;">*</span><textarea placeholder="min:3 characters" data-test="subject-description-input" type="textarea" v-model="newSubject.description" id="description" v-on:blur="validate()"></textarea></label>
+        <label for="description">Description
+            <span style="color:red;">*</span>
+            <textarea placeholder="min:3 characters" data-test="subject-description-input" type="textarea" v-model="newSubject.description" id="description" v-on:blur="validate()"></textarea>
+        </label>
         <error-field v-if="errors && 'description' in errors" :errors="errors.description" class="error"></error-field>
     
         <div class="center-align">
-            <button @click="addSubject" data-test="subject-add-btn">Add Note</button>
+            <button @click="addSubject" data-test="subject-add-btn">Add Subject</button>
         </div>
     
         <ul class="error">

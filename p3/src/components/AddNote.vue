@@ -4,15 +4,24 @@
             <h3 class="center-align" data-test="note-toggle-btn" id="newNoteToggle" @click="addnoteToggle">Add New Note</h3>
     
             <div v-if="addnoteActive">
-                <label for="title">Title<span style="color:red;">*</span><input data-test="title-input" type="text" v-model="newNote.title" id="title" v-on:blur="validate()" /></label>
+                <label for="title">Title
+                    <span style="color:red;">*</span>
+                    <input data-test="title-input" type="text" v-model="newNote.title" id="title" v-on:blur="validate()" />
+                </label>
                 <error-field v-if="errors && 'title' in errors" :errors="errors.title" class="error"></error-field>
-
-                <label for="subject">Subject<span style="color:red;">*</span><input type="text" v-model="subject.name" id="subject" v-on:blur="validate()" disabled></label>
+    
+                <label for="subject">Subject
+                    <span style="color:red;">*</span>
+                    <input type="text" v-model="subject.name" id="subject" v-on:blur="validate()" disabled>
+                </label>
                 <error-field v-if="errors && 'subject' in errors" :errors="errors.subject" class="error"></error-field>
-
-                <label for="description">Description<span style="color:red;">*</span><textarea data-test="description-input" type="textarea" v-model="newNote.description" id="description" v-on:blur="validate()"></textarea></label>
+    
+                <label for="description">Description
+                    <span style="color:red;">*</span>
+                    <textarea data-test="description-input" type="textarea" v-model="newNote.description" id="description" v-on:blur="validate()"></textarea>
+                </label>
                 <error-field v-if="errors && 'description' in errors" :errors="errors.description" class="error"></error-field>
-
+    
                 <div class="center-align">
                     <button data-test="add-note-btn" @click="addNote">Add Note</button>
                     <ul style="list-style-type:none; color:red;">

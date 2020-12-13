@@ -11,22 +11,22 @@
                 <h2 class="center-align">Login</h2>
                 <div>
                     <label>Email:
-                                <input
-                                    type="text"
-                                    data-test="email-input"
-                                    v-model="data.email"
-                                    v-on:blur="validateLogin()"
-                            /></label>
+                        <input
+                            type="text"
+                            data-test="email-input"
+                            v-model="data.email"
+                            v-on:blur="validateLogin()"
+                        /></label>
                     <error-field v-if="errors && 'email' in errors" :errors="errors.email" class="error"></error-field>
                 </div>
                 <div>
                     <label>Password:
-                                <input
-                                    type="password"
-                                    data-test="password-input"
-                                    v-model="data.password"
-                                    v-on:blur="validateLogin()"
-                            /></label>
+                        <input
+                            type="password"
+                            data-test="password-input"
+                            v-model="data.password"
+                            v-on:blur="validateLogin()"
+                        /></label>
                     <error-field v-if="errors && 'password' in errors" :errors="errors.password" class="error"></error-field>
                 </div>
     
@@ -51,32 +51,32 @@
                     <h2 class="center-align">Register</h2>
                     <div>
                         <label>Name:
-                                    <input
-                                        type="text"
-                                        data-test="name-register-input"
-                                        v-model="data.name"
-                                        v-on:blur="validateRegister()"
-                                /></label>
+                            <input
+                                type="text"
+                                data-test="name-register-input"
+                                v-model="data.name"
+                                v-on:blur="validateRegister()"
+                            /></label>
                         <error-field v-if="errors && 'name' in errors" :errors="errors.name" class="error"></error-field>
                     </div>
                     <div>
                         <label>Email:
-                                    <input
-                                        type="text"
-                                        data-test="email-register-input"
-                                        v-model="data.email"
-                                        v-on:blur="validateRegister()"
-                                /></label>
+                            <input
+                                type="text"
+                                data-test="email-register-input"
+                                v-model="data.email"
+                                v-on:blur="validateRegister()"
+                            /></label>
                         <error-field v-if="errors && 'email' in errors" :errors="errors.email" class="error"></error-field>
                     </div>
                     <div>
                         <label>Password:
-                                    <input
-                                        type="password"
-                                        data-test="password-register-input"
-                                        v-model="data.password"
-                                        v-on:blur="validateRegister()"
-                                /></label>
+                            <input
+                                type="password"
+                                data-test="password-register-input"
+                                v-model="data.password"
+                                v-on:blur="validateRegister()"
+                            /></label>
                         <error-field v-if="errors && 'password' in errors" :errors="errors.password" class="error"></error-field>
                     </div>
     
@@ -112,8 +112,8 @@ export default {
     data() {
         return {
             data: {
-                email: 'michaelkchen13@gmail.com',
-                password: '12345678',
+                email: '',
+                password: '',
                 name: '',
             },
             errors: null,
@@ -124,12 +124,9 @@ export default {
         };
     },
     computed: {
-        // Get our user and products state from the Vuex store
+        // Get our user from the Vuex store
         user() {
             return this.$store.state.user;
-        },
-        products() {
-            return this.$store.state.products;
         },
     },
     methods: {

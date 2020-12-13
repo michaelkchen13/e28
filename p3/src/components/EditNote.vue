@@ -3,13 +3,22 @@
         <button data-test="edit-btn" v-on:click=editTF()>Edit Note</button>
     
         <div v-if="edit">
-            <label for="name">Title<span style="color:red;">*</span><input data-test="edit-title" type="text" v-model="updateNote.title" v-on:blur="validate()" /></label>
+            <label for="name">Title
+                <span style="color:red;">*</span>
+                <input data-test="edit-title" type="text" v-model="updateNote.title" v-on:blur="validate()" />
+            </label>
             <error-field v-if="errors && 'title' in errors" :errors="errors.title" class="error"></error-field>
     
-            <label for="subject">Subject<span style="color:red;">*</span> <input type="text" v-model="updateNote.subject" v-on:blur="validate()" disabled></label>
+            <label for="subject">
+                Subject<span style="color:red;">*</span> 
+                <input type="text" v-model="updateNote.subject" v-on:blur="validate()" disabled>
+            </label>
             <error-field v-if="errors && 'subject' in errors" :errors="errors.subject" class="error"></error-field>
     
-            <label for="description">Description<span style="color:red;">*</span><textarea data-test="edit-description" v-model="updateNote.description" id="description" v-on:blur="validate()"></textarea></label>
+            <label for="description">Description
+                <span style="color:red;">*</span>
+                <textarea data-test="edit-description" v-model="updateNote.description" id="description" v-on:blur="validate()"></textarea>
+            </label>
             <error-field v-if="errors && 'description' in errors" :errors="errors.description" class="error"></error-field>
     
             <button id="editSaveBtn" data-test="edit-save-btn" v-on:click='editNote();'>Save Changes</button>

@@ -6,12 +6,11 @@
                 <h5>{{ subject.description }}</h5>
             </div>
         </div>
-
+    
         <div v-if="user">
             <add-note v-bind:subject="subject" v-bind:notes="notes" v-on:update-subjects="updateSubjectsNotes()">
             </add-note>
         </div>
-        
     
         <show-notes v-bind:subject="subject" v-bind:notes="notes" v-on:update-subjects="updateSubjectsNotes()">
         </show-notes>

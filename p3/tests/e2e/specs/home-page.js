@@ -8,7 +8,7 @@ describe('Home Page', () => {
         // Confirm we see at least 2 subjects
         cy.get('[data-test="subject"]').its('length').should('be.gte', 2);
     })
-    
+
     it('clicks on subject General Notes', () => {
 
         cy.get('a[href*="/subject/1"]').click();

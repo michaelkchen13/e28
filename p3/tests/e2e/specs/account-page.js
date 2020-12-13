@@ -62,9 +62,9 @@ describe('Account Page', () => {
 
     it('Register a test user', () => {
         // register
-        cy.get('[data-test=password-register-input]').clear().type(user.password);
         cy.get('[data-test=name-register-input]').clear().type(user.name);
         cy.get('[data-test=email-register-input]').clear().type(user.email);
+        cy.get('[data-test=password-register-input]').clear().type(user.password);
         cy.get('[data-test=register-button]').click();
         cy.contains('[data-test="welcome-message"]', user.name);
 
