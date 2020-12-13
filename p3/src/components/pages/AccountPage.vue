@@ -42,7 +42,7 @@
     
                 <div class="center-align">
                     <p>Don't have an account?</p>
-                    <button v-on:click="registerLoginToggle">Create new account</button>
+                    <button v-on:click="registerLoginToggle" data-test="register-toggle-btn">Create new account</button>
                 </div>
             </div>
     
@@ -92,7 +92,7 @@
     
                     <div class="center-align">
                         <p>Already have an account?</p>
-                        <button v-on:click="registerLoginToggle">Login with existing account</button>
+                        <button v-on:click="registerLoginToggle" data-test="login-toggle-btn">Login with existing account</button>
                     </div>
                 </div>
             </div>

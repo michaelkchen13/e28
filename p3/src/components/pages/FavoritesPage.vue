@@ -32,7 +32,6 @@ import { axios } from '@/app.js';
 export default {
     name: 'favorites-page',
     props: ['subjects', 'notes'],
-    components: {},
     data: function() {
         return {
             favorites: '',

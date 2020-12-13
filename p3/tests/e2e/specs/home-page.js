@@ -2,7 +2,7 @@ describe('Home Page', () => {
     it('visits the homepage', () => {
 
         cy.visit('/');
-        cy.contains('a', "Mike's Notes");
+        cy.contains('a', "Collaborative Notes");
         cy.contains('a', "General Notes");
 
         // Confirm we see at least 2 subjects

@@ -13,7 +13,7 @@
                                 Created on: {{ note.created_at | moment("MMMM Do YYYY, h:mm:ss a") }}<br> Last Edited on: {{ note.updated_at | moment("MMMM Do YYYY, h:mm:ss a") }}
                             </div>
     
-                            <div class="noteButtons">
+                            <div class="noteButtons" v-if="user">
                                 <edit-note :note='note' v-on:update-subjects="updateSubjectsNotes()">
                                 </edit-note>
     
@@ -24,7 +24,7 @@
                                 </delete-note>
                             </div>
                         </div>
-
+    
                     </div>
                 </div>
             </div>
@@ -48,7 +48,11 @@ export default {
     data: function() {
         return {}
     },
-    computed: {},
+    computed: {
+        user() {
+            return this.$store.state.user;
+        },
+    },
     methods: {
         updateSubjectsNotes() {
             this.$emit('update-subjects');

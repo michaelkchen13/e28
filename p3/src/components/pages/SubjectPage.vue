@@ -30,25 +30,23 @@ export default {
         'add-note': AddNote,
     },
     data: function() {
-        return {
-            user: null
-        };
+        return {};
     },
     computed: {
         subject() {
             return this.subjects.filter((subject) => {
                 return subject.id == this.id;
             }, this.id)[0];
-        }
+        },
+        user() {
+            return this.$store.state.user;
+        },
     },
     methods: {
         updateSubjectsNotes() {
             this.$emit('update-subjects');
         },
     },
-    mounted() {
-        this.user = this.$store.state.user;
-    }
 }
 </script>
 
